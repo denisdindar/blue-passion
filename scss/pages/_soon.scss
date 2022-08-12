@@ -1,0 +1,138 @@
+// Coming Soon Page
+.cs {
+  &-container {
+    @include flex(column, center);
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #eee, #ccc, #0b9adc);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    padding: 7.5rem 0;
+
+    @include media(">phone", "<=1024px") {
+      padding-right: 3rem;
+      padding-left: 3rem;
+    }
+  }
+
+  &-image {
+    width: 60rem;
+  }
+
+  &-heading {
+    @include font($font-heading, 900, 6.4rem);
+    text-transform: capitalize;
+    color: $color-primary;
+    margin-bottom: 2rem;
+
+    @include media(">phone", "<=1024px") {
+      font-size: 4.8rem;
+    }
+  }
+
+  &-text {
+    max-width: 40rem;
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 3rem 0;
+
+    @include media(">phone", "<=1024px") {
+      font-size: 1.4rem;
+    }
+  }
+
+  &-social {
+    @include flex(center, $gap: 2rem);
+    max-width: 35rem;
+
+    &-icon {
+      width: 3.2rem;
+      height: 3.2rem;
+      transition: all 0.25s;
+
+      &:hover {
+        @include y(-5px);
+      }
+
+      &:hover path {
+        transition: all 0.25s;
+        fill: $color-secondary;
+      }
+    }
+  }
+}
+
+// Animation: Animated Gradient BG for Coming Soon Page
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Loading Dots
+.loading {
+  @include flex($justify: space-between);
+  max-width: 5rem;
+  width: 100%;
+  margin: 0 auto;
+  transform: translateY(-25px);
+}
+
+.dot {
+  animation: loading 1.5s cubic-bezier(0.55, -0.77, 0.42, 1.79) infinite normal both running;
+  background: #0b9adc;
+  border-radius: 50%;
+  display: block;
+  height: 1rem;
+  width: 1rem;
+}
+.dot:nth-child(2) {
+  animation-name: loading;
+  animation-delay: 0.5s;
+}
+.dot:nth-child(3) {
+  animation-name: loading;
+  animation-delay: 1s;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateY(0);
+  }
+  4% {
+    transform: translateY(22%);
+  }
+  25% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+// Countdown
+#countdown-timer {
+  /* display: flex; */
+  text-align: center;
+  font-size: 40px !important;
+  text-transform: uppercase;
+}
+
+.timer {
+  margin-right: 10px;
+}
+
+#countdown-timer {
+  text-align: center;
+  font-size: 18px !important;
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: #0b9adc;
+  transform: translateY(-10px);
+}

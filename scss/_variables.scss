@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:wght@300;400;900&display=swap");
+
+// CSS VARIABLES
+/* CSS VARIABLES */
+:root {
+  /* Font Family */
+  --font-heading: "Roboto", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  /* Colors */
+  --color-primary: #0b9adc;
+  --color-secondary: #2f8b64;
+  --color-black: #2a2a2a;
+  --color-white: #eee;
+  --color-dark-gray: rgb(68, 68, 68);
+}
+
+// SASS VARIABLES
+// Font Family
+$font-heading: var(--font-heading);
+$font-body: var(--font-body);
+// Colors
+$color-primary: var(--color-primary);
+$color-secondary: var(--color-secondary);
+$color-black: var(--color-black);
+$color-dark-gray: var(--color-dark-gray);
+$color-white: var(--color-white);

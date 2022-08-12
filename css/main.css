@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Roboto:wght@300;400;900&display=swap");
+/* CSS VARIABLES */
+:root {
+  /* Font Family */
+  --font-heading: "Roboto", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  /* Colors */
+  --color-primary: #0b9adc;
+  --color-secondary: #2f8b64;
+  --color-black: #2a2a2a;
+  --color-white: #eee;
+  --color-dark-gray: rgb(68, 68, 68);
+}
+
+/* Global Settings */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-white);
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+p {
+  display: block;
+}
+
+/* Default Link Styles */
+a:link,
+a:visited,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+/* Normalize bold text */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/* Remove bullets from lists */
+ul,
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button;
+}
+
+/* Remove the inner border and padding in Firefox. */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* Reduce Animation depends on user choises */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+.cs-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #eee, #ccc, #0b9adc);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  padding: 7.5rem 0;
+}
+@media (min-width: 381px) and (max-width: 1024px) {
+  .cs-container {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}
+.cs-image {
+  width: 60rem;
+}
+.cs-heading {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 6.4rem;
+  text-transform: capitalize;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+@media (min-width: 381px) and (max-width: 1024px) {
+  .cs-heading {
+    font-size: 4.8rem;
+  }
+}
+.cs-text {
+  max-width: 40rem;
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 3rem 0;
+}
+@media (min-width: 381px) and (max-width: 1024px) {
+  .cs-text {
+    font-size: 1.4rem;
+  }
+}
+.cs-social {
+  display: flex;
+  flex-direction: center;
+  gap: 2rem;
+  max-width: 35rem;
+}
+.cs-social-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  transition: all 0.25s;
+}
+.cs-social-icon:hover {
+  transform: translateY(-5px);
+}
+.cs-social-icon:hover path {
+  transition: all 0.25s;
+  fill: var(--color-secondary);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.loading {
+  display: flex;
+  justify-content: space-between;
+  max-width: 5rem;
+  width: 100%;
+  margin: 0 auto;
+  transform: translateY(-25px);
+}
+
+.dot {
+  animation: loading 1.5s cubic-bezier(0.55, -0.77, 0.42, 1.79) infinite normal both running;
+  background: #0b9adc;
+  border-radius: 50%;
+  display: block;
+  height: 1rem;
+  width: 1rem;
+}
+
+.dot:nth-child(2) {
+  animation-name: loading;
+  animation-delay: 0.5s;
+}
+
+.dot:nth-child(3) {
+  animation-name: loading;
+  animation-delay: 1s;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateY(0);
+  }
+  4% {
+    transform: translateY(22%);
+  }
+  25% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+#countdown-timer {
+  /* display: flex; */
+  text-align: center;
+  font-size: 40px !important;
+  text-transform: uppercase;
+}
+
+.timer {
+  margin-right: 10px;
+}
+
+#countdown-timer {
+  text-align: center;
+  font-size: 18px !important;
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: #0b9adc;
+  transform: translateY(-10px);
+}

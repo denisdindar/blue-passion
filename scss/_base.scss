@@ -1,0 +1,98 @@
+/* Global Settings */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $color-white;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+p {
+  display: block;
+}
+
+/* Default Link Styles */
+a:link,
+a:visited,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+/* Normalize bold text */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/* Remove bullets from lists */
+ul,
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  background: none;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button;
+}
+
+/* Remove the inner border and padding in Firefox. */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* Reduce Animation depends on user choises */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
