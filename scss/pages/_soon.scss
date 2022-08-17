@@ -20,13 +20,12 @@
   }
 
   &-heading {
-    @include font($font-heading, 900, 6.4rem);
+    @include font($font-heading, 900, 3.8rem);
     text-transform: capitalize;
     color: $color-primary;
-    margin-bottom: 2rem;
 
-    @include media(">phone", "<=1024px") {
-      font-size: 4.8rem;
+    @include media("<=1024px") {
+      font-size: 2.6rem;
     }
   }
 
@@ -36,7 +35,7 @@
     text-align: center;
     margin: 3rem 0;
 
-    @include media(">phone", "<=1024px") {
+    @include media("<=1024px") {
       font-size: 1.4rem;
     }
   }
@@ -114,25 +113,4 @@
   50% {
     transform: translateY(0);
   }
-}
-
-// Countdown
-#countdown-timer {
-  /* display: flex; */
-  text-align: center;
-  font-size: 40px !important;
-  text-transform: uppercase;
-}
-
-.timer {
-  margin-right: 10px;
-}
-
-#countdown-timer {
-  text-align: center;
-  font-size: 18px !important;
-  text-transform: uppercase;
-  font-weight: bolder;
-  color: #0b9adc;
-  transform: translateY(-10px);
 }
